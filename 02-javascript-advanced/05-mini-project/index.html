@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🌤️ Weather App</h1>
+            <p>Nhập tên thành phố để xem thời tiết</p>
+        </header>
+
+        <!-- Search Form -->
+        <form id="searchForm" class="search-form">
+            <input type="text" id="cityInput" placeholder="Nhập tên thành phố..." autocomplete="off" required>
+            <button type="submit" id="searchBtn">
+                <span class="btn-text">🔍 Tìm</span>
+                <span class="btn-loading" hidden>⏳</span>
+            </button>
+        </form>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" hidden>
+            <p>❌ <span id="errorText">Không tìm thấy thành phố</span></p>
+        </div>
+
+        <!-- Weather Card -->
+        <div id="weatherCard" class="weather-card" hidden>
+            <div class="weather-main">
+                <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon">
+                <div class="weather-temp">
+                    <span id="temperature">--</span>°C
+                </div>
+                <div class="weather-description" id="description">--</div>
+            </div>
+
+            <h2 class="city-name" id="cityName">--</h2>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-icon">💧</span>
+                    <span class="detail-label">Độ ẩm</span>
+                    <span class="detail-value" id="humidity">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💨</span>
+                    <span class="detail-label">Gió</span>
+                    <span class="detail-value" id="windSpeed">-- m/s</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">🌡️</span>
+                    <span class="detail-label">Cảm giác</span>
+                    <span class="detail-value" id="feelsLike">--°C</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Searches -->
+        <div id="recentSearches" class="recent-searches" hidden>
+            <h3>🕐 Tìm kiếm gần đây</h3>
+            <div id="recentList" class="recent-list"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

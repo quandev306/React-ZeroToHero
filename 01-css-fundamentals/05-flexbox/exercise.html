@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Complete Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>💪 Flexbox Practice</h1>
+        <p class="intro">Hoàn thành các bài tập để master Flexbox!</p>
+
+        <!-- Exercise 1: Basic Flex -->
+        <section class="exercise">
+            <h2>1. Basic Flexbox</h2>
+            <p>Biến các box thành hàng ngang với display: flex</p>
+
+            <div class="boxes-row">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </section>
+
+        <!-- Exercise 2: Justify Content -->
+        <section class="exercise">
+            <h2>2. Justify Content</h2>
+            <p>Căn chỉnh theo trục ngang</p>
+
+            <h3>flex-start (mặc định)</h3>
+            <div class="justify-demo start">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+
+            <h3>center</h3>
+            <div class="justify-demo center">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+
+            <h3>space-between</h3>
+            <div class="justify-demo between">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+
+            <h3>space-evenly</h3>
+            <div class="justify-demo evenly">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </section>
+
+        <!-- Exercise 3: Align Items -->
+        <section class="exercise">
+            <h2>3. Align Items</h2>
+            <p>Căn chỉnh theo trục dọc</p>
+
+            <div class="align-demo-container">
+                <div class="align-demo start">
+                    <span class="label">flex-start</span>
+                    <div class="box">1</div>
+                    <div class="box tall">2</div>
+                    <div class="box">3</div>
+                </div>
+
+                <div class="align-demo center">
+                    <span class="label">center</span>
+                    <div class="box">1</div>
+                    <div class="box tall">2</div>
+                    <div class="box">3</div>
+                </div>
+
+                <div class="align-demo end">
+                    <span class="label">flex-end</span>
+                    <div class="box">1</div>
+                    <div class="box tall">2</div>
+                    <div class="box">3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercise 4: Perfect Center -->
+        <section class="exercise">
+            <h2>4. Perfect Center ⭐</h2>
+            <p>Căn giữa hoàn hảo - sử dụng justify-content + align-items</p>
+
+            <div class="perfect-center">
+                <div class="centered-box">
+                    <h3>Căn giữa hoàn hảo!</h3>
+                    <p>Dùng flex + justify + align</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercise 5: Navbar -->
+        <section class="exercise">
+            <h2>5. Real-World: Navbar</h2>
+
+            <nav class="navbar">
+                <div class="nav-logo">🚀 Brand</div>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="nav-cta">Get Started</button>
+            </nav>
+        </section>
+
+        <!-- Exercise 6: Flex Grow -->
+        <section class="exercise">
+            <h2>6. Flex Grow</h2>
+            <p>Phân chia không gian</p>
+
+            <h3>flex: 1 cho tất cả (đều nhau)</h3>
+            <div class="grow-demo">
+                <div class="grow-box equal">flex: 1</div>
+                <div class="grow-box equal">flex: 1</div>
+                <div class="grow-box equal">flex: 1</div>
+            </div>
+
+            <h3>flex: 2 cho box giữa (gấp đôi)</h3>
+            <div class="grow-demo">
+                <div class="grow-box one">flex: 1</div>
+                <div class="grow-box two">flex: 2</div>
+                <div class="grow-box one">flex: 1</div>
+            </div>
+
+            <h3>Sidebar cố định + Main linh hoạt</h3>
+            <div class="grow-demo">
+                <div class="grow-box fixed">flex: 0 0 150px</div>
+                <div class="grow-box flexible">flex: 1</div>
+            </div>
+        </section>
+
+        <!-- Exercise 7: Flex Wrap -->
+        <section class="exercise">
+            <h2>7. Flex Wrap - Responsive Cards</h2>
+            <p>Cards tự động xuống dòng khi hết chỗ</p>
+
+            <div class="cards-wrap">
+                <div class="card-item">Card 1</div>
+                <div class="card-item">Card 2</div>
+                <div class="card-item">Card 3</div>
+                <div class="card-item">Card 4</div>
+                <div class="card-item">Card 5</div>
+                <div class="card-item">Card 6</div>
+            </div>
+        </section>
+
+        <!-- Exercise 8: Direction Column -->
+        <section class="exercise">
+            <h2>8. Flex Direction Column</h2>
+            <p>Xếp theo chiều dọc</p>
+
+            <div class="column-demo">
+                <header class="column-header">Header</header>
+                <main class="column-main">
+                    Main Content
+                    <p>flex: 1 để chiếm hết không gian còn lại</p>
+                </main>
+                <footer class="column-footer">Footer (luôn ở dưới)</footer>
+            </div>
+        </section>
+
+        <!-- Exercise 9: Order -->
+        <section class="exercise">
+            <h2>9. Order - Thay đổi thứ tự</h2>
+            <p>Thay đổi thứ tự hiển thị mà không đổi HTML</p>
+
+            <div class="order-demo">
+                <div class="order-box" style="order: 3">Box 1 (order: 3)</div>
+                <div class="order-box" style="order: 1">Box 2 (order: 1)</div>
+                <div class="order-box" style="order: 2">Box 3 (order: 2)</div>
+            </div>
+        </section>
+
+        <!-- Exercise 10: Complete Layout -->
+        <section class="exercise">
+            <h2>10. Complete Layout Challenge</h2>
+            <p>Kết hợp tất cả kiến thức</p>
+
+            <div class="complete-layout">
+                <header class="layout-header">
+                    <div class="header-logo">Logo</div>
+                    <nav class="header-nav">
+                        <a href="#">Nav 1</a>
+                        <a href="#">Nav 2</a>
+                        <a href="#">Nav 3</a>
+                    </nav>
+                </header>
+
+                <div class="layout-body">
+                    <aside class="layout-sidebar">
+                        <h4>Sidebar</h4>
+                        <ul>
+                            <li>Menu 1</li>
+                            <li>Menu 2</li>
+                            <li>Menu 3</li>
+                        </ul>
+                    </aside>
+                    <main class="layout-main">
+                        <h3>Main Content</h3>
+                        <div class="main-cards">
+                            <div class="main-card">Card A</div>
+                            <div class="main-card">Card B</div>
+                            <div class="main-card">Card C</div>
+                        </div>
+                    </main>
+                </div>
+
+                <footer class="layout-footer">
+                    Footer - Copyright 2024
+                </footer>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

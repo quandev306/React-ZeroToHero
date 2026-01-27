@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Responsive Design Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- =============================================
+       BÀI TẬP 1: Responsive Navbar
+       Yêu cầu:
+       - Mobile: Logo + Hamburger icon (menu ẩn)
+       - Desktop: Logo + Full menu
+  ============================================= -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🚀 Brand</span>
+            <button class="hamburger">☰</button>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- =============================================
+         BÀI TẬP 2: Responsive Hero
+         Yêu cầu: Font size responsive với clamp()
+    ============================================= -->
+        <section class="hero">
+            <h1>Build Amazing Websites</h1>
+            <p>Learn responsive design with modern CSS techniques</p>
+            <button class="btn-primary">Get Started</button>
+        </section>
+
+        <!-- =============================================
+         BÀI TẬP 3: Responsive Grid
+         Yêu cầu:
+         - Mobile: 1 cột
+         - Tablet: 2 cột
+         - Desktop: 3 cột
+    ============================================= -->
+        <section class="features">
+            <h2>Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>Beautiful Design</h3>
+                    <p>Create stunning visuals that captivate your audience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Fully Responsive</h3>
+                    <p>Perfect on any device, from mobile to desktop.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Fast Performance</h3>
+                    <p>Optimized code for lightning-fast load times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h3>Secure</h3>
+                    <p>Built with security best practices in mind.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛠️</div>
+                    <h3>Easy to Customize</h3>
+                    <p>Flexible architecture for easy modifications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>24/7 Support</h3>
+                    <p>We're here to help whenever you need us.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+         BÀI TẬP 4: Responsive Footer
+         Yêu cầu:
+         - Mobile: 1 cột, căn giữa
+         - Desktop: 4 cột
+    ============================================= -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <p>Building the web, one pixel at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>hello@example.com</p>
+                    <p>+84 123 456 789</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Brand. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

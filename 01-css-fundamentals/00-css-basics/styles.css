@@ -1,0 +1,306 @@
+/* ==========================================
+   BÀI 00: CSS BASICS
+   File này demo tất cả concepts cơ bản
+   ========================================== */
+
+/* ===================
+   1. RESET & BASE
+   Đây là phần "reset" - loại bỏ styles mặc định của browser
+   =================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    /* background-color: #f5f7fa; */
+    background-image: url('https://picsum.photos/1920/1080');
+    /* background-size: cover;
+    background-position: center; */
+}
+
+/* ===================
+   2. CONTAINER
+   Giới hạn chiều rộng và căn giữa nội dung
+   =================== */
+.container {
+    max-width: 800px;
+    /* Chiều rộng tối đa */
+    margin: 0 auto;
+    /* Căn giữa horizontal */
+    padding: 40px 20px;
+    /* Padding top-bottom | left-right */
+    /* background-color: #f5f7fa; */
+}
+
+/* ===================
+   3. HEADER
+   =================== */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    /* 2.5 x 16px = 40px */
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    /* 18px */
+    color: #666;
+}
+
+/* ===================
+   4. CARD COMPONENT
+   Tái sử dụng cho mọi section
+   =================== */
+.card {
+    /* background-image: inherit; */
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    /* border-color: red;
+    border-width: 2px;
+    border-style: solid; */
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    /* 20px */
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* ===================
+   5. TEXT STYLING
+   =================== */
+.paragraph {
+    margin-bottom: 16px;
+    color: #444;
+}
+
+.highlight {
+    background-color: #fff3cd;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #888;
+}
+
+.large-text {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* ===================
+   6. COLORS DEMO
+   =================== */
+.color-boxes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.color-box {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.color-box.red {
+    background-color: #e74c3c;
+}
+
+.color-box.green {
+    background-color: #27ae60;
+}
+
+.color-box.blue {
+    background-color: #3498db;
+}
+
+.color-box.gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ===================
+   7. BUTTONS
+   =================== */
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a6fd6;
+}
+
+.btn-success {
+    background: #27ae60;
+    border-color: #27ae60;
+    color: white;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* ===================
+   8. BORDERS
+   =================== */
+.border-boxes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.border-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    font-size: 14px;
+    color: #666;
+}
+
+.border-box.solid {
+    border: 3px solid #667eea;
+}
+
+.border-box.dashed {
+    border: 3px dashed #667eea;
+}
+
+.border-box.rounded {
+    border: 3px solid #667eea;
+    border-radius: 16px;
+}
+
+.border-box.circle {
+    border: 3px solid #667eea;
+    border-radius: 50%;
+}
+
+/* ===================
+   9. BACKGROUNDS
+   =================== */
+.bg-boxes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.bg-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bg-color {
+    background-color: #1a1a2e;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-image {
+    background-image: url('https://picsum.photos/300/200');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===================
+   10. FOOTER
+   =================== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===================
+   BÀI TẬP: THỬ THAY ĐỔI
+   
+   1. Đổi màu background của body sang #e0e5ec
+   2. Đổi font-size của .header h1 sang 3rem
+   3. Đổi màu của .btn-primary sang #e74c3c
+   4. Thêm border-radius: 20px cho .card
+   5. Đổi gradient colors của .bg-gradient
+   =================== */

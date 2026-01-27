@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Flexbox Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- =============================================
+       BÀI TẬP 1: Navbar
+       Yêu cầu:
+       - Logo bên trái
+       - Menu items bên phải
+       - Căn giữa vertical
+  ============================================= -->
+    <nav class="navbar">
+        <div class="logo">🚀 MyBrand</div>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- =============================================
+       BÀI TẬP 2: Hero Section
+       Yêu cầu:
+       - Căn giữa hoàn hảo (cả horizontal và vertical)
+       - Chiều cao 400px
+  ============================================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Flexbox</h1>
+            <p>Master CSS layouts with ease</p>
+            <button class="btn-primary">Get Started</button>
+        </div>
+    </section>
+
+    <!-- =============================================
+       BÀI TẬP 3: Card Grid
+       Yêu cầu:
+       - 3 cards trên 1 hàng (desktop)
+       - Đều nhau, gap 24px
+       - Responsive: 1 card/hàng trên mobile
+  ============================================= -->
+    <section class="cards-section">
+        <h2>Our Services</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Design</h3>
+                <p>Beautiful and modern UI designs that capture attention.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Development</h3>
+                <p>Clean, efficient code that brings designs to life.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Responsive</h3>
+                <p>Perfect experience on any device, any screen size.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+       BÀI TẬP 4: Footer 3 cột
+       Yêu cầu:
+       - 3 cột đều nhau
+       - Căn giữa nội dung trong mỗi cột
+       - Gap giữa các cột
+  ============================================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>We create amazing web experiences.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>email@example.com</p>
+                <p>+84 123 456 789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MyBrand. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: CSS Grid Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- =============================================
+       BÀI TẬP 1: Photo Gallery
+       Yêu cầu: Grid responsive với auto-fit, minmax
+  ============================================= -->
+    <section class="gallery-section">
+        <h2>📸 Photo Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?1" alt="Photo 1"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?2" alt="Photo 2"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?3" alt="Photo 3"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?4" alt="Photo 4"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?5" alt="Photo 5"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?6" alt="Photo 6"></div>
+        </div>
+    </section>
+
+    <!-- =============================================
+       BÀI TẬP 2: Dashboard Layout
+       Yêu cầu: Sử dụng grid-template-areas
+  ============================================= -->
+    <section class="dashboard-section">
+        <h2>📊 Dashboard Layout</h2>
+        <div class="dashboard">
+            <header class="dash-header">Header</header>
+            <nav class="dash-sidebar">Sidebar</nav>
+            <main class="dash-main">Main Content</main>
+            <aside class="dash-aside">Aside</aside>
+            <footer class="dash-footer">Footer</footer>
+        </div>
+    </section>
+
+    <!-- =============================================
+       BÀI TẬP 3: Magazine Layout
+       Yêu cầu: Items có kích thước khác nhau (span)
+  ============================================= -->
+    <section class="magazine-section">
+        <h2>📰 Magazine Layout</h2>
+        <div class="magazine">
+            <article class="article-featured">
+                <h3>Featured Article</h3>
+                <p>This is the main story that spans multiple columns.</p>
+            </article>
+            <article class="article-small">
+                <h3>Article 2</h3>
+                <p>Secondary story.</p>
+            </article>
+            <article class="article-small">
+                <h3>Article 3</h3>
+                <p>Another small article.</p>
+            </article>
+            <article class="article-wide">
+                <h3>Wide Article</h3>
+                <p>This article spans the full width.</p>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 01: Selectors Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎯 Selectors Practice</h1>
+
+        <!-- Exercise 1: Class Selectors -->
+        <section class="exercise">
+            <h2>Exercise 1: Class Selectors</h2>
+            <p>Style các buttons bằng class selectors</p>
+
+            <div class="button-group">
+                <button class="btn">Default</button>
+                <button class="btn primary">Primary</button>
+                <button class="btn secondary">Secondary</button>
+                <button class="btn danger">Danger</button>
+                <button class="btn success">Success</button>
+            </div>
+
+            <!-- TODO trong styles.css:
+           .btn { padding, border-radius, cursor }
+           .btn.primary { background blue, color white }
+           .btn.secondary { background gray }
+           .btn.danger { background red }
+           .btn.success { background green }
+      -->
+        </section>
+
+        <!-- Exercise 2: Descendant Selectors -->
+        <section class="exercise">
+            <h2>Exercise 2: Descendant Selectors</h2>
+            <p>Style links bên trong navigation khác với links thường</p>
+
+            <nav class="main-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <p>Đây là <a href="#">link bình thường</a> trong paragraph.</p>
+
+            <!-- TODO: 
+           .main-nav a { color white, no underline, padding }
+           p a { color blue, underline on hover }
+      -->
+        </section>
+
+        <!-- Exercise 3: Pseudo-classes -->
+        <section class="exercise">
+            <h2>Exercise 3: Hover & Focus States</h2>
+
+            <div class="card-group">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Hover vào card để xem hiệu ứng</p>
+                </div>
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Card sẽ nổi lên khi hover</p>
+                </div>
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Và đổi màu border</p>
+                </div>
+            </div>
+
+            <!-- TODO:
+           .card:hover { transform translateY(-5px), shadow, border-color }
+      -->
+        </section>
+
+        <!-- Exercise 4: nth-child -->
+        <section class="exercise">
+            <h2>Exercise 4: nth-child Selectors</h2>
+            <p>Style table với alternating row colors</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td>Inactive</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bob Wilson</td>
+                        <td>bob@example.com</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Alice Brown</td>
+                        <td>alice@example.com</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Charlie Davis</td>
+                        <td>charlie@example.com</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- TODO:
+           tr:nth-child(odd) { background }
+           tr:nth-child(even) { background khác }
+           tr:hover { background highlight }
+      -->
+        </section>
+
+        <!-- Exercise 5: First/Last Child -->
+        <section class="exercise">
+            <h2>Exercise 5: First & Last Child</h2>
+
+            <ul class="menu-list">
+                <li>Menu Item 1 (đầu tiên - bold)</li>
+                <li>Menu Item 2</li>
+                <li>Menu Item 3</li>
+                <li>Menu Item 4</li>
+                <li>Menu Item 5 (cuối - no border)</li>
+            </ul>
+
+            <!-- TODO:
+           li:first-child { font-weight bold }
+           li:last-child { border-bottom none }
+      -->
+        </section>
+
+        <!-- Exercise 6: Form States -->
+        <section class="exercise">
+            <h2>Exercise 6: Form Input States</h2>
+
+            <form class="demo-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" required placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Optional message"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">I agree to terms</label>
+                </div>
+                <button type="submit" class="btn primary">Submit</button>
+            </form>
+
+            <!-- TODO:
+           input:focus { border-color, box-shadow }
+           input:required { border-left red }
+           input:checked + label { color green, bold }
+      -->
+        </section>
+
+        <!-- Exercise 7: Pseudo-elements -->
+        <section class="exercise">
+            <h2>Exercise 7: Pseudo-elements</h2>
+
+            <blockquote class="quote">
+                The only way to do great work is to love what you do.
+            </blockquote>
+            <cite class="quote-author">— Steve Jobs</cite>
+
+            <div class="tooltip-demo">
+                <span class="tooltip" data-tip="This is a tooltip!">Hover me for tooltip</span>
+            </div>
+
+            <!-- TODO:
+           .quote::before { content: open quote }
+           .quote::after { content: close quote }
+           .tooltip::after { content: attr(data-tip), show on hover }
+      -->
+        </section>
+
+    </div>
+</body>
+
+</html>

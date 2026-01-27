@@ -1,0 +1,255 @@
+/* ==========================================
+   Box Model Exercise - Starter CSS
+   
+   TODO: Hoàn thành các phần được đánh dấu
+   ========================================== */
+
+/* Reset cơ bản */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.exercise {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px dashed #ddd;
+  /* background-color: white; */
+}
+
+.exercise h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+/* ==========================================
+   BÀI TẬP 1: Card Component
+   TODO: Style cho .card
+   ========================================== */
+.card {
+  /* 
+   * Thêm CSS ở đây:
+   * - padding: 24px
+   * - border: 2px solid #e0e0e0
+   * - border-radius: 12px
+   * - margin-bottom: 20px
+   * - box-shadow: 0 4px 15px rgba(0,0,0,0.1)
+   */
+  padding: 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.card .price {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* ==========================================
+   BÀI TẬP 2: Centering
+   TODO: Căn giữa .center-box
+   ========================================== */
+.center-container {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.center-box {
+  background: #667eea;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  /* 
+   * TODO: Thêm CSS để căn giữa
+   * - width: 200px
+   * - margin: ? 
+   */
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   BÀI TẬP 3: Margin & Spacing
+   TODO: Thêm margin và padding
+   ========================================== */
+.items-container {
+  background: #f0f0f0;
+  border-radius: 8px;
+  /* TODO: Thêm padding */
+  padding: 20px;
+}
+
+.item {
+  background: white;
+  padding: 16px;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+  margin: 20px 0;
+
+  /* 
+   * TODO: Thêm margin: 20px 0
+   * Quan sát: margin giữa các items có collapse không?
+   */
+}
+
+/* ==========================================
+   BÀI TẬP 4: CSS Selectors
+   TODO: Style theo yêu cầu mà KHÔNG thêm class
+   ========================================== */
+.selector-list {
+  list-style: none;
+}
+
+.selector-list li {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+/* TODO: li đầu tiên - màu xanh lá (#27ae60) */
+.selector-list li:first-child {
+  color: #27ae60;
+}
+
+/* TODO: li cuối cùng - màu đỏ (#e74c3c) */
+.selector-list li:last-child {
+  color: #e74c3c;
+}
+
+/* TODO: li chẵn - background #f9f9f9 */
+.selector-list li:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* TODO: Link khi hover - màu cam (#f39c12) */
+.selector-list a:hover {
+  color: #f39c12;
+}
+
+
+/* ==========================================
+   BÀI TẬP 5: Box Sizing Comparison
+   TODO: So sánh content-box vs border-box
+   ========================================== */
+.box-sizing-demo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box-content,
+.box-border {
+  /* Cả 2 đều width: 300px, padding: 20px, border: 5px solid */
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #667eea;
+  background: #f0f4ff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.box-content {
+  /* TODO: box-sizing: content-box */
+  /* Kích thước thực tế sẽ là: 300 + 20*2 + 5*2 = 350px */
+  box-sizing: content-box;
+}
+
+.box-border {
+  /* TODO: box-sizing: border-box */
+  /* Kích thước thực tế sẽ vẫn là: 300px */
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   SOLUTION (Bỏ comment khi cần xem đáp án)
+   ========================================== */
+/*
+.card {
+  padding: 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.center-box {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.items-container {
+  padding: 20px;
+}
+
+.item {
+  margin: 20px 0;
+}
+
+.selector-list li:first-child {
+  color: #27ae60;
+}
+
+.selector-list li:last-child {
+  color: #e74c3c;
+}
+
+.selector-list li:nth-child(2n) {
+  background: #f9f9f9;
+}
+
+.selector-list a:hover {
+  color: #f39c12;
+}
+
+.box-content {
+  box-sizing: content-box;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
+*/

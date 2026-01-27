@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Shadow Demo</title>
+    <link rel="stylesheet" href="shadow-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Làm chủ CSS Box Shadow 🎨</h1>
+        <p>Hiểu rõ từng thông số của thuộc tính bóng đổ trong CSS.</p>
+    </header>
+
+    <main class="container">
+        <!-- 1. Basic Shadow -->
+        <section class="card">
+            <h2>1. Bóng cơ bản (X, Y)</h2>
+            <div class="box basic">box-shadow: 10px 10px;</div>
+            <p class="desc">Chỉ có tọa độ X và Y. Bóng trông rất sắc nét (hard edge).</p>
+        </section>
+
+        <!-- 2. Blur Shadow -->
+        <section class="card">
+            <h2>2. Thêm độ nhòe (Blur)</h2>
+            <div class="box blur">box-shadow: 10px 10px 15px gray;</div>
+            <p class="desc">Tham số thứ 3 giúp bóng mịn hơn và tự nhiên hơn.</p>
+        </section>
+
+        <!-- 3. Spread Shadow -->
+        <section class="card">
+            <h2>3. Độ lan của bóng (Spread)</h2>
+            <div class="box spread">box-shadow: 0 0 20px 10px skyblue;</div>
+            <p class="desc">Tham số thứ 4 làm bóng phồng to ra hoặc thu nhỏ lại.</p>
+        </section>
+
+        <!-- 4. Soft Modern Shadow -->
+        <section class="card">
+            <h2>4. Bóng hiện đại (Soft Shadow)</h2>
+            <div class="box soft">box-shadow: 0 10px 30px rgba(0,0,0,0.1);</div>
+            <p class="desc">Sử dụng RGBA và Blur lớn để tạo hiệu ứng "nổi" (elevation) chuyên nghiệp.</p>
+        </section>
+
+        <!-- 5. Inset Shadow -->
+        <section class="card">
+            <h2>5. Bóng bên trong (Inset)</h2>
+            <div class="box inset">box-shadow: inset 0 0 10px black;</div>
+            <p class="desc">Thêm từ khóa <code>inset</code> để đổ bóng vào lòng vật thể.</p>
+        </section>
+
+        <!-- 6. Multiple Shadows -->
+        <section class="card">
+            <h2>6. Đa tầng bóng (Multiple)</h2>
+            <div class="box multiple">Nhiều lớp bóng</div>
+            <p class="desc">Bạn có thể dùng dấu phẩy để tạo nhiều lớp bóng chồng lên nhau.</p>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 1: Box Model Exercise</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Box Model Exercises</h1>
+    
+    <!-- =============================================
+         BÀI TẬP 1: Tạo Card Component
+         Yêu cầu:
+         - padding: 24px
+         - border: 2px solid #e0e0e0
+         - border-radius: 12px
+         - margin-bottom: 20px
+         - box-shadow nhẹ
+    ============================================= -->
+    <section class="exercise">
+      <h2>Exercise 1: Card Component</h2>
+      <div class="card">
+        <h3>Product Card</h3>
+        <p>Đây là mô tả sản phẩm. Hãy style cho card này trông đẹp mắt.</p>
+        <span class="price">$99.00</span>
+      </div>
+    </section>
+
+    <!-- =============================================
+         BÀI TẬP 2: Căn giữa Element
+         Yêu cầu: Căn giữa .center-box trong .center-container
+         - Sử dụng margin: 0 auto
+         - .center-box có width: 200px
+    ============================================= -->
+    <section class="exercise">
+      <h2>Exercise 2: Centering</h2>
+      <div class="center-container">
+        <div class="center-box">
+          Căn giữa tôi!
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         BÀI TẬP 3: Spacing với Margin
+         Yêu cầu:
+         - Mỗi .item có margin: 20px 0
+         - Quan sát margin collapse giữa các items
+         - Thêm padding cho .items-container
+    ============================================= -->
+    <section class="exercise">
+      <h2>Exercise 3: Margin & Spacing</h2>
+      <div class="items-container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         BÀI TẬP 4: Selectors Practice
+         Yêu cầu (chỉ dùng CSS, không thêm class):
+         - li đầu tiên: màu xanh lá
+         - li cuối cùng: màu đỏ  
+         - li chẵn: background màu xám nhạt
+         - Link khi hover: màu cam
+    ============================================= -->
+    <section class="exercise">
+      <h2>Exercise 4: CSS Selectors</h2>
+      <ul class="selector-list">
+        <li>Mục 1 - <a href="#">Click me</a></li>
+        <li>Mục 2 - <a href="#">Click me</a></li>
+        <li>Mục 3 - <a href="#">Click me</a></li>
+        <li>Mục 4 - <a href="#">Click me</a></li>
+        <li>Mục 5 - <a href="#">Click me</a></li>
+      </ul>
+    </section>
+
+    <!-- =============================================
+         BÀI TẬP 5: Box Sizing
+         Yêu cầu:
+         - Cả 2 box đều width: 300px
+         - Box 1: box-sizing: content-box (mặc định)
+         - Box 2: box-sizing: border-box
+         - Cả 2 có padding: 20px, border: 5px
+         - Quan sát sự khác biệt về kích thước thực tế
+    ============================================= -->
+    <section class="exercise">
+      <h2>Exercise 5: Box Sizing Comparison</h2>
+      <div class="box-sizing-demo">
+        <div class="box-content">
+          content-box<br>
+          width: 300px
+        </div>
+        <div class="box-border">
+          border-box<br>
+          width: 300px
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,460 @@
+/* ==========================================
+   FLEXBOX COMPLETE PRACTICE
+   ========================================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+}
+
+.intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.exercise {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.exercise h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.exercise h3 {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 20px 0 10px;
+}
+
+.exercise>p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Common Box Style */
+.box {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.box.tall {
+    height: 100px;
+}
+
+/* ==========================================
+   EXERCISE 1: Basic Flexbox
+   TODO: Thêm display: flex
+   ========================================== */
+.boxes-row {
+    display: flex;
+    gap: 16px;
+    /* Đã hoàn thành - boxes xếp hàng ngang */
+}
+
+/* ==========================================
+   EXERCISE 2: Justify Content
+   TODO: Thêm justify-content cho từng demo
+   ========================================== */
+.justify-demo {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.justify-demo.start {
+    justify-content: flex-start;
+}
+
+.justify-demo.center {
+    justify-content: center;
+}
+
+.justify-demo.between {
+    justify-content: space-between;
+}
+
+.justify-demo.evenly {
+    justify-content: space-evenly;
+}
+
+/* ==========================================
+   EXERCISE 3: Align Items
+   TODO: Thêm align-items
+   ========================================== */
+.align-demo-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.align-demo {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    height: 150px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    position: relative;
+}
+
+.align-demo .label {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    color: #888;
+}
+
+.align-demo.start {
+    align-items: flex-start;
+}
+
+.align-demo.center {
+    align-items: center;
+}
+
+.align-demo.end {
+    align-items: flex-end;
+}
+
+/* ==========================================
+   EXERCISE 4: Perfect Center
+   TODO: justify-content: center + align-items: center
+   ========================================== */
+.perfect-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+}
+
+.centered-box {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.centered-box h3 {
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   EXERCISE 5: Navbar
+   TODO: 
+   - navbar: display: flex, justify-content: space-between, align-items: center
+   - nav-menu: display: flex, gap
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #1a1a2e;
+    border-radius: 8px;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: white;
+}
+
+.nav-cta {
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.nav-cta:hover {
+    background: #5a6fd6;
+}
+
+/* ==========================================
+   EXERCISE 6: Flex Grow
+   TODO: Thêm flex properties
+   ========================================== */
+.grow-demo {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.grow-box {
+    padding: 20px;
+    background: #667eea;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.grow-box.equal {
+    flex: 1;
+}
+
+.grow-box.one {
+    flex: 1;
+}
+
+.grow-box.two {
+    flex: 2;
+}
+
+.grow-box.fixed {
+    flex: 0 0 150px;
+    background: #1a1a2e;
+}
+
+.grow-box.flexible {
+    flex: 1;
+}
+
+/* ==========================================
+   EXERCISE 7: Flex Wrap - Responsive Cards
+   TODO:
+   - display: flex
+   - flex-wrap: wrap
+   - gap: 20px
+   - card-item: flex: 1 1 250px
+   ========================================== */
+.cards-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-item {
+    flex: 1 1 250px;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   EXERCISE 8: Direction Column
+   TODO:
+   - display: flex
+   - flex-direction: column
+   - min-height: 300px
+   - main: flex: 1
+   ========================================== */
+.column-demo {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.column-header {
+    padding: 20px;
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+}
+
+.column-main {
+    flex: 1;
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.column-footer {
+    padding: 20px;
+    background: #667eea;
+    color: white;
+    text-align: center;
+}
+
+/* ==========================================
+   EXERCISE 9: Order
+   ========================================== */
+.order-demo {
+    display: flex;
+    gap: 16px;
+}
+
+.order-box {
+    flex: 1;
+    padding: 20px;
+    background: #667eea;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ==========================================
+   EXERCISE 10: Complete Layout
+   TODO: Kết hợp tất cả
+   ========================================== */
+.complete-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.layout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #1a1a2e;
+    color: white;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.layout-body {
+    display: flex;
+    flex: 1;
+}
+
+.layout-sidebar {
+    flex: 0 0 200px;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+.layout-sidebar h4 {
+    margin-bottom: 16px;
+    color: #667eea;
+}
+
+.layout-sidebar ul {
+    list-style: none;
+}
+
+.layout-sidebar li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.layout-main {
+    flex: 1;
+    padding: 24px;
+}
+
+.layout-main h3 {
+    margin-bottom: 20px;
+}
+
+.main-cards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.main-card {
+    flex: 1 1 150px;
+    padding: 30px;
+    background: #667eea;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.layout-footer {
+    padding: 16px;
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .layout-body {
+        flex-direction: column;
+    }
+
+    .layout-sidebar {
+        flex: none;
+    }
+}
