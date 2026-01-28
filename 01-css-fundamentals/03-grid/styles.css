@@ -38,6 +38,9 @@ h2 {
    ========================================== */
 .gallery {
     /* TODO: Grid responsive */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
 }
 
 .gallery-item {
@@ -72,6 +75,15 @@ h2 {
     background: #f0f0f0;
     padding: 16px;
     border-radius: 12px;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 60px 1fr 50px;
+    grid-template-areas: 
+        "header header header" 
+        "sidebar main aside" 
+        "footer footer footer";
+    gap: 10px;
+    min-height: 500px;
     /* TODO: Grid với named areas */
 }
 
@@ -84,6 +96,7 @@ h2 {
     align-items: center;
     justify-content: center;
     /* TODO: grid-area: header */
+    grid-area: header;
 }
 
 .dash-sidebar {
@@ -92,6 +105,7 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     /* TODO: grid-area: sidebar */
+    grid-area: sidebar;
 }
 
 .dash-main {
@@ -99,6 +113,7 @@ h2 {
     padding: 30px;
     border-radius: 8px;
     /* TODO: grid-area: main */
+    grid-area: main;
 }
 
 .dash-aside {
@@ -106,6 +121,7 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     /* TODO: grid-area: aside */
+    grid-area: aside;
 }
 
 .dash-footer {
@@ -117,6 +133,7 @@ h2 {
     align-items: center;
     justify-content: center;
     /* TODO: grid-area: footer */
+    grid-area: footer;
 }
 
 /* ==========================================
@@ -130,6 +147,9 @@ h2 {
    ========================================== */
 .magazine {
     /* TODO: Grid layout */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .magazine article {
@@ -145,10 +165,13 @@ h2 {
 
 .article-featured {
     /* TODO: span 2 cột, 2 hàng */
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .article-wide {
     /* TODO: span toàn bộ chiều rộng */
+    grid-column: span 3;
 }
 
 /* ==========================================

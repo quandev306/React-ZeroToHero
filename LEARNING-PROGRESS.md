@@ -12,6 +12,7 @@
 | 2 | JavaScript Advanced | 2 tuần | ⬜ 0% |
 | 3 | React Core | 3 tuần | ⬜ 0% |
 | 4 | Final Project | 2-3 tuần | ⬜ 0% |
+| 5 | TailwindCSS | 1-2 tuần | ⬜ 0% |
 
 ---
 

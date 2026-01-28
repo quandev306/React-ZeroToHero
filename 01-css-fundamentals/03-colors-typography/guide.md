@@ -69,7 +69,235 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 ---
 
-## 3. Color Palette Recommendation
+## 3. CSS Variables (Custom Properties) ⭐
+
+> **Đây là kiến thức quan trọng!** CSS Variables giúp bạn quản lý code tốt hơn và là nền tảng để hiểu TailwindCSS sau này.
+
+### Cú pháp cơ bản
+
+```css
+/* KHAI BÁO biến trong :root (phạm vi toàn cục) */
+:root {
+  --tên-biến: giá-trị;
+}
+
+/* SỬ DỤNG biến với var() */
+.element {
+  property: var(--tên-biến);
+}
+```
+
+### Giải thích từng phần
+
+| Phần | Ý nghĩa |
+|------|---------|
+| `:root` | Pseudo-class đại diện cho `<html>`, biến khai báo ở đây có thể dùng **ở mọi nơi** |
+| `--` | **Bắt buộc** phải có prefix `--` để browser hiểu đây là biến |
+| `var()` | Hàm để **lấy giá trị** của biến |
+
+### Ví dụ thực tế
+
+```css
+/* ====== KHAI BÁO ====== */
+:root {
+  /* Colors */
+  --primary-color: #667eea;
+  --text-color: #333;
+  --bg-color: #f5f5f5;
+  
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  
+  /* Typography */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+}
+
+/* ====== SỬ DỤNG ====== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+}
+
+.button {
+  background: var(--primary-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+}
+
+.card {
+  padding: var(--spacing-lg);
+  background: white;
+}
+```
+
+### Tại sao nên dùng CSS Variables?
+
+#### 1. Thay đổi 1 chỗ → Cập nhật toàn bộ
+
+```css
+/* Dùng biến ở 50 chỗ khác nhau */
+.button { background: var(--primary-color); }
+.link { color: var(--primary-color); }
+.heading { border-color: var(--primary-color); }
+.icon { fill: var(--primary-color); }
+
+/* Muốn đổi màu? Chỉ cần sửa 1 dòng! */
+:root {
+  --primary-color: #e74c3c;  /* Đổi từ xanh sang đỏ */
+}
+/* → Tất cả 50 chỗ tự động đổi theo! */
+```
+
+#### 2. Dễ làm Dark Mode
+
+```css
+/* Light mode (mặc định) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+/* Dark mode */
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+}
+
+/* Code sử dụng không cần đổi gì! */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+```
+
+#### 3. Code dễ đọc, dễ maintain
+
+```css
+/* ❌ Khó nhớ, không biết ý nghĩa */
+padding: 1.125rem;
+color: #6b7280;
+
+/* ✅ Rõ ràng, có ý nghĩa */
+padding: var(--spacing-lg);
+color: var(--text-muted);
+```
+
+### Đơn vị `rem` là gì?
+
+Bạn thấy các giá trị như `1rem`, `1.5rem` - đây là **đơn vị tương đối**:
+
+| Đơn vị | Dựa vào | Ví dụ | Kết quả |
+|--------|---------|-------|---------|
+| `px` | Cố định | `16px` | Luôn = 16 pixels |
+| `rem` | **Root** font-size (`<html>`) | `1rem` | = 16px (mặc định) |
+| `em` | **Parent** font-size | `1em` | = font-size của parent |
+
+```css
+/* Browser mặc định: html { font-size: 16px } */
+
+1rem    = 16px      (16 × 1)
+0.75rem = 12px      (16 × 0.75)
+0.875rem = 14px     (16 × 0.875)
+1.125rem = 18px     (16 × 1.125)
+1.5rem  = 24px      (16 × 1.5)
+2rem    = 32px      (16 × 2)
+```
+
+**Tại sao dùng `rem`?**
+- ✅ **Responsive**: User zoom browser → mọi thứ scale theo
+- ✅ **Accessible**: User có thể thay đổi font-size mặc định
+- ✅ **Nhất quán**: Dễ tính toán tỉ lệ
+
+### Fallback value (giá trị dự phòng)
+
+```css
+/* Nếu --primary-color chưa được khai báo, dùng #3b82f6 */
+.button {
+  background: var(--primary-color, #3b82f6);
+}
+```
+
+### Ví dụ thực tế: Theme System
+
+```css
+:root {
+  /* ===== COLORS ===== */
+  --color-primary: #667eea;
+  --color-primary-dark: #5a6fd6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* ===== TEXT ===== */
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-text-light: #9ca3af;
+  
+  /* ===== BACKGROUND ===== */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f3f4f6;
+  
+  /* ===== SPACING ===== */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  
+  /* ===== TYPOGRAPHY ===== */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Sử dụng */
+.card {
+  background: var(--color-bg);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.card-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+```
+
+---
+
+## 4. Color Palette Recommendation
 
 ### Neutral Colors (Dùng cho text, background)
 ```css
@@ -105,7 +333,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 ---
 
-## 4. Typography
+## 5. Typography
 
 ### Font Family
 ```css
@@ -204,7 +432,7 @@ word-spacing: 4px;        /* Giãn từ */
 
 ---
 
-## 5. Text Effects
+## 6. Text Effects
 
 ### Text Shadow
 ```css
@@ -213,9 +441,9 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
 /* Multiple shadows */
 text-shadow: 
-  1px 1px 2px black,
-  0 0 25px blue,
-  0 0 5px darkblue;
+  1px 1px 2px  black,
+  0   0   25px blue,
+  0   0   5px  darkblue;
 ```
 
 ### Text Truncation
@@ -238,7 +466,7 @@ text-shadow:
 
 ---
 
-## 6. Typography System
+## 7. Typography System
 
 ```css
 /* Base */
@@ -308,10 +536,12 @@ Mở `exercise.html` để áp dụng colors và typography vào thực tế!
 
 - [ ] Biết các format màu: hex, rgb, hsl
 - [ ] Sử dụng rgba cho transparency
+- [ ] **Hiểu CSS Variables**: khai báo với `--`, sử dụng với `var()`
+- [ ] **Hiểu đơn vị `rem`**: 1rem = 16px (mặc định)
 - [ ] Thiết lập font-family đúng cách
 - [ ] Dùng rem cho font-size
 - [ ] Biết các giá trị font-weight
-- [ ] Tạo được color palette
+- [ ] Tạo được color palette với CSS Variables
 
 ---
 

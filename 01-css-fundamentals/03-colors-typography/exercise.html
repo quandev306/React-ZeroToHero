@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 03: Colors & Typography - Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ====================================================
+       BÀI TẬP: CSS Variables & Typography
+       ====================================================
+       
+       Mục tiêu:
+       1. Khai báo CSS Variables trong :root
+       2. Sử dụng var() để áp dụng biến
+       3. Thực hành color palette và typography
+       
+       Hướng dẫn:
+       - Mở file styles.css và hoàn thành các TODO
+       - Xem kết quả trong browser
+       - So sánh với solution.css khi hoàn thành
+  ==================================================== -->
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">MyBrand</h1>
+            <nav class="nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Welcome to Our Website</h1>
+            <p class="hero-subtitle">
+                Learn CSS Variables and Typography to build beautiful interfaces
+            </p>
+            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-secondary">Learn More</button>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="cards">
+            <div class="card">
+                <span class="badge badge-success">New</span>
+                <h3 class="card-title">Feature One</h3>
+                <p class="card-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore.
+                </p>
+                <a href="#" class="card-link">Learn more →</a>
+            </div>
+
+            <div class="card">
+                <span class="badge badge-warning">Popular</span>
+                <h3 class="card-title">Feature Two</h3>
+                <p class="card-description">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo.
+                </p>
+                <a href="#" class="card-link">Learn more →</a>
+            </div>
+
+            <div class="card">
+                <span class="badge badge-info">Updated</span>
+                <h3 class="card-title">Feature Three</h3>
+                <p class="card-description">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla.
+                </p>
+                <a href="#" class="card-link">Learn more →</a>
+            </div>
+        </section>
+
+        <!-- Alert Messages -->
+        <section class="alerts">
+            <div class="alert alert-success">
+                ✅ Success! Your changes have been saved.
+            </div>
+            <div class="alert alert-warning">
+                ⚠️ Warning! Please review your information.
+            </div>
+            <div class="alert alert-error">
+                ❌ Error! Something went wrong.
+            </div>
+        </section>
+
+        <!-- Typography Showcase -->
+        <section class="typography-demo">
+            <h2>Typography Scale Demo</h2>
+            <p class="text-xs">Text XS - 0.75rem (12px)</p>
+            <p class="text-sm">Text SM - 0.875rem (14px)</p>
+            <p class="text-base">Text Base - 1rem (16px)</p>
+            <p class="text-lg">Text LG - 1.125rem (18px)</p>
+            <p class="text-xl">Text XL - 1.25rem (20px)</p>
+            <p class="text-2xl">Text 2XL - 1.5rem (24px)</p>
+            <p class="text-3xl">Text 3XL - 1.875rem (30px)</p>
+        </section>
+
+        <!-- Theme Toggle Demo -->
+        <section class="theme-demo">
+            <h2>Theme Toggle (Bonus)</h2>
+            <p>Click the button to toggle dark mode!</p>
+            <button id="theme-toggle" class="btn btn-primary">
+                🌙 Toggle Dark Mode
+            </button>
+        </section>
+    </div>
+
+    <script>
+        // Bonus: Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.textContent = document.body.classList.contains('dark-mode')
+                ? '☀️ Toggle Light Mode'
+                : '🌙 Toggle Dark Mode';
+        });
+    </script>
+</body>
+
+</html>

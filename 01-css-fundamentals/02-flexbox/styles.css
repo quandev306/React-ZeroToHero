@@ -34,6 +34,9 @@ ul {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 16px 40px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     /* TODO: Thêm flexbox properties */
 }
 
@@ -43,6 +46,8 @@ ul {
 }
 
 .nav-menu {
+    display: flex;
+    gap: 8px;
     /* TODO: display: flex với gap */
 }
 
@@ -66,6 +71,10 @@ ul {
    ========================================== */
 .hero {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
     /* TODO: Căn giữa hoàn hảo với flexbox */
 }
 
@@ -122,6 +131,9 @@ ul {
 .cards-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
     /* TODO: Flexbox layout cho cards */
 }
 
@@ -132,6 +144,8 @@ ul {
     text-align: center;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    cursor: pointer;
+    flex: 1 1 100px;
     /* TODO: flex properties để responsive */
 }
 
@@ -169,11 +183,16 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
     /* TODO: Flexbox 3 cột */
 }
 
 .footer-col {
     /* TODO: flex: 1 để đều nhau */
+    flex: 1;
 }
 
 .footer-col h4 {
@@ -200,8 +219,8 @@ ul {
 /* ==========================================
    SOLUTION (Bỏ comment khi cần)
    ========================================== */
-/*
-.navbar {
+
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -236,5 +255,4 @@ ul {
 
 .footer-col {
   flex: 1;
-}
-*/
+} */

@@ -12,11 +12,11 @@
 
 ### 1. Grid vs Flexbox
 
-| Flexbox | Grid |
-|---------|------|
-| 1 chiều (hàng HOẶC cột) | 2 chiều (hàng VÀ cột) |
-| Content-first | Layout-first |
-| Navigation, Cards | Full page layout |
+| Flexbox                 | Grid                 |
+|-------------------------|----------------------|
+| 1 chiều (hàng HOẶC cột) | 2 chiều (hàng VÀ cột)|
+| Content-first           | Layout-first         |
+| Navigation, Cards       | Full page layout     |
 
 ### 2. Grid Container
 
