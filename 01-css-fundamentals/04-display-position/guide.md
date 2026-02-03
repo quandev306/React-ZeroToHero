@@ -16,7 +16,7 @@ display: block;
 - Ví dụ: `<div>`, `<p>`, `<h1>-<h6>`, `<section>`, `<header>`
 
 ```
-[         Block Element         ]
+[       Block Element           ]
 [       Another Block           ]
 ```
 

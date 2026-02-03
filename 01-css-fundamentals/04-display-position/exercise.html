@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 04: Display & Position - Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ====================================================
+       BÀI TẬP: DISPLAY & POSITION
+       ====================================================
+       
+       Mục tiêu:
+       1. Hiểu rõ sự khác biệt giữa static, relative, absolute, fixed, sticky
+       2. Thực hành các patterns phổ biến
+       3. Thấy được cách position hoạt động khi scroll
+       
+       Hướng dẫn:
+       - Scroll trang xuống để thấy sự khác biệt
+       - Mở styles.css và hoàn thành các TODO
+       - So sánh với solution.css khi hoàn thành
+  ==================================================== -->
+
+    <h1 class="page-title">🎯 Display & Position Playground</h1>
+
+    <!-- ============================================
+       DEMO 1: CÁC LOẠI POSITION
+       ============================================ -->
+    <section class="demo-section">
+        <h2>📍 Demo 1: So sánh các loại Position</h2>
+        <p class="instruction">Scroll xuống để thấy sự khác biệt!</p>
+
+        <div class="position-demo">
+            <!-- Static (mặc định) -->
+            <div class="box-container">
+                <h3>position: static</h3>
+                <div class="demo-box">
+                    <div class="box box-static">
+                        Static<br>
+                        (Mặc định)<br>
+                        <small>top, left không hoạt động</small>
+                    </div>
+                </div>
+                <p class="note">✅ Theo document flow bình thường</p>
+            </div>
+
+            <!-- Relative -->
+            <div class="box-container">
+                <h3>position: relative</h3>
+                <div class="demo-box">
+                    <div class="box-ghost">Vị trí gốc</div>
+                    <div class="box box-relative">
+                        Relative<br>
+                        top: 50px<br>
+                        left: 50px
+                    </div>
+                </div>
+                <p class="note">✅ Dịch từ vị trí gốc, vẫn chiếm chỗ cũ</p>
+            </div>
+
+            <!-- Absolute -->
+            <div class="box-container">
+                <h3>position: absolute</h3>
+                <div class="demo-box parent-relative">
+                    <span class="parent-label">Parent (relative)</span>
+                    <div class="box box-absolute">
+                        Absolute<br>
+                        top: 10px<br>
+                        right: 10px
+                    </div>
+                    <p style="padding-top: 80px;">Nội dung khác...</p>
+                </div>
+                <p class="note">✅ Định vị theo parent, không chiếm chỗ</p>
+            </div>
+
+            <!-- Fixed -->
+            <div class="box-container">
+                <h3>position: fixed</h3>
+                <div class="demo-box">
+                    <div class="box box-fixed-demo">
+                        Fixed<br>
+                        (Xem góc dưới-phải màn hình)
+                    </div>
+                </div>
+                <p class="note">✅ Cố định theo viewport, không scroll</p>
+            </div>
+
+            <!-- Sticky -->
+            <div class="box-container">
+                <h3>position: sticky</h3>
+                <div class="demo-box sticky-container">
+                    <div class="box box-sticky">
+                        Sticky<br>
+                        top: 70px<br>
+                        <small>Scroll để thấy magic!</small>
+                    </div>
+                    <div class="sticky-content">
+                        <p>Nội dung dài...</p>
+                        <p>Scroll xuống...</p>
+                        <p>Box sticky sẽ "dính" lại!</p>
+                        <p>Magic! 🎩✨</p>
+                    </div>
+                </div>
+                <p class="note">✅ Relative → Fixed khi scroll</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer để tạo scroll -->
+    <div class="spacer"></div>
+
+    <!-- ============================================
+       DEMO 2: PRACTICAL PATTERNS
+       ============================================ -->
+    <section class="demo-section">
+        <h2>🎨 Demo 2: Patterns Thực Tế</h2>
+
+        <!-- Pattern 1: Badge trên Card -->
+        <div class="pattern">
+            <h3>Pattern 1: Badge trên góc Card</h3>
+            <div class="card">
+                <!-- TODO: Thêm position: absolute cho badge -->
+                <span class="badge">NEW</span>
+                <img src="https://picsum.photos/300/200?1" alt="Product">
+                <div class="card-body">
+                    <h4>Sản phẩm mới</h4>
+                    <p>Badge "NEW" được đặt ở góc bằng position: absolute</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pattern 2: Overlay -->
+        <div class="pattern">
+            <h3>Pattern 2: Image Overlay</h3>
+            <div class="image-container">
+                <img src="https://picsum.photos/300/200?2" alt="Image">
+                <!-- TODO: Thêm overlay với position: absolute -->
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h4>Tiêu đề overlay</h4>
+                        <p>Hover để thấy hiệu ứng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pattern 3: Dropdown Menu -->
+        <div class="pattern">
+            <h3>Pattern 3: Dropdown Menu</h3>
+            <div class="dropdown">
+                <button class="dropdown-button">Menu ▼</button>
+                <!-- TODO: Thêm position cho dropdown-content -->
+                <div class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <p class="note">Hover vào button để xem menu</p>
+        </div>
+
+        <!-- Pattern 4: Tooltip -->
+        <div class="pattern">
+            <h3>Pattern 4: Tooltip</h3>
+            <div class="tooltip-demo">
+                Hover vào <span class="text-with-tooltip">
+                    text này
+                    <span class="tooltip">💡 Đây là tooltip!</span>
+                </span> để thấy tooltip
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- ============================================
+       DEMO 3: Z-INDEX
+       ============================================ -->
+    <section class="demo-section">
+        <h2>📚 Demo 3: Z-Index (Stacking Order)</h2>
+
+        <div class="z-index-demo">
+            <div class="stack-box box-1">z-index: 1</div>
+            <div class="stack-box box-2">z-index: 2</div>
+            <div class="stack-box box-3">z-index: 3</div>
+            <div class="stack-box box-0">z-index: 10<br>(Lớn nhất → Trên cùng)</div>
+        </div>
+        <p class="note">Số z-index càng lớn, element càng ở trên!</p>
+    </section>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- ============================================
+       DEMO 4: CENTERING TECHNIQUES
+       ============================================ -->
+    <section class="demo-section">
+        <h2>🎯 Demo 4: Các cách Căn Giữa</h2>
+
+        <div class="centering-demo">
+            <!-- Method 1: Absolute + Transform -->
+            <div class="center-box">
+                <h4>Absolute + Transform</h4>
+                <div class="center-container method-1">
+                    <div class="centered-item">
+                        Tôi ở giữa!<br>
+                        <small>position: absolute<br>transform: translate(-50%, -50%)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 2: Flexbox -->
+            <div class="center-box">
+                <h4>Flexbox (Modern)</h4>
+                <div class="center-container method-2">
+                    <div class="centered-item">
+                        Tôi ở giữa!<br>
+                        <small>display: flex<br>justify/align-items: center</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Method 3: Grid -->
+            <div class="center-box">
+                <h4>Grid (Modern)</h4>
+                <div class="center-container method-3">
+                    <div class="centered-item">
+                        Tôi ở giữa!<br>
+                        <small>display: grid<br>place-items: center</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer cuối -->
+    <div class="spacer-large"></div>
+
+    <!-- ============================================
+       FIXED ELEMENTS (Luôn hiển thị)
+       ============================================ -->
+
+    <!-- Fixed: Nút Chat (góc dưới-phải) -->
+    <button class="chat-button" title="Chat với chúng tôi">
+        💬
+    </button>
+
+    <!-- Fixed: Back to Top (góc dưới-trái) -->
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ⬆️ Top
+    </button>
+
+    <!-- Fixed: Header -->
+    <header class="fixed-header">
+        🎯 Fixed Header - Luôn ở trên cùng khi scroll
+    </header>
+
+    <!-- Instructions Box -->
+    <div class="instructions">
+        <h3>📝 Hướng dẫn:</h3>
+        <ol>
+            <li><strong>Scroll</strong> trang lên xuống để thấy:
+                <ul>
+                    <li>Static, Relative, Absolute: Di chuyển theo scroll</li>
+                    <li>Fixed: Cố định tại chỗ</li>
+                    <li>Sticky: Dính lại khi chạm top</li>
+                </ul>
+            </li>
+            <li>Mở <code>styles.css</code> và hoàn thành các TODO</li>
+            <li>Hover vào các elements để thấy hiệu ứng</li>
+            <li>So sánh với <code>solution.css</code> sau khi xong</li>
+        </ol>
+    </div>
+
+</body>
+
+</html>
