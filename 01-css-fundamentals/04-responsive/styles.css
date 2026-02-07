@@ -62,6 +62,7 @@ ul {
 }
 
 .hamburger {
+    display: block;
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -73,6 +74,7 @@ ul {
 .nav-menu {
     /* TODO: Mobile - ẩn mặc định */
     /* TODO: Desktop - display: flex */
+    display: none;
     background: rgba(255, 255, 255, 0.1);
     margin-top: 16px;
     border-radius: 8px;
@@ -110,14 +112,14 @@ ul {
 
 .hero h1 {
     /* TODO: font-size: clamp(1.8rem, 5vw, 3.5rem) */
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
     color: #333;
     margin-bottom: 16px;
 }
 
 .hero p {
     /* TODO: font-size: clamp(1rem, 2vw, 1.25rem) */
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     color: #666;
     margin-bottom: 24px;
 }
@@ -248,17 +250,52 @@ ul {
 /* Tablet */
 @media (min-width: 768px) {
     /* TODO: Navbar responsive */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hamburger {
+        display: none;
+    }
 
+    .nav-menu {
+        display: flex;
+        gap: 8px;
+        margin-top: 0;
+        padding: 0;
+        background: transparent;
+    }
+
+    .nav-brand {
+        flex: none;
+    }
+
+    .nav-menu li {
+        margin-bottom: 0;
+    }
     /* TODO: Features grid 2 cột */
-
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     /* TODO: Footer grid 2 cột */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
     /* TODO: Features grid 3 cột */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
     /* TODO: Footer grid 4 cột */
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* ==========================================

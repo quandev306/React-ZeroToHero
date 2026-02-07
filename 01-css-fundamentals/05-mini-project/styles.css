@@ -119,10 +119,19 @@ img {
    ========================================== */
 .navbar {
     /* TODO: Thêm styles */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
-    /* TODO: Flexbox */
+    /* ✅ Flexbox: logo bên trái, menu bên phải */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .logo {
@@ -132,14 +141,32 @@ img {
 
 .hamburger {
     /* TODO: Ẩn trên desktop */
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
 }
 
 .nav-menu {
     /* TODO: Mobile hidden, Desktop flex */
+    display: none;
 }
 
 .nav-menu a {
-    /* TODO: Padding, hover effect */
+    /* ✅ Padding và hover effect cho menu items */
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    /* ✅ Hover: thay đổi màu nền */
+    background: var(--primary);
+    color: var(--white);
 }
 
 /* ==========================================
@@ -149,7 +176,15 @@ img {
    - Gradient text
    ========================================== */
 .hero {
-    /* TODO: Layout */
+    /* ✅ Hero Section: Full viewport height, center content */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--gradient);
+    color: var(--white);
+    padding: 60px 20px;
 }
 
 .hero-title {
@@ -157,18 +192,27 @@ img {
 }
 
 .gradient-text {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* ✅ Màu vàng/gold nổi bật trên nền gradient */
+    color: #ffd700;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
 }
 
 .hero-subtitle {
-    /* TODO: Styles */
+    /* ✅ Subtitle: màu nhạt hơn, margin */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 20px 0 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
     /* TODO: Flexbox, gap */
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
 }
 
 /* ==========================================
@@ -182,11 +226,26 @@ img {
 }
 
 .features-grid {
-    /* TODO: Grid responsive */
+    /* ✅ Grid responsive: 1 cột mobile, 2-3 cột desktop */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
 .feature-card {
-    /* TODO: Card styles, hover */
+    /* ✅ Feature Card: padding, background, shadow, hover effect */
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    /* ✅ Hover: lift effect */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
 }
 
 .feature-icon {
@@ -204,7 +263,11 @@ img {
 }
 
 .about-container {
-    /* TODO: Grid hoặc Flexbox 2 cột */
+    /* ✅ About: Grid 2 cột, gap 50px, stack on mobile */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
 .about-image img {
@@ -240,11 +303,18 @@ img {
 }
 
 .testimonials-grid {
-    /* TODO: Grid */
+    /* ✅ Testimonials Grid: 1 cột mobile, 2-3 cột desktop */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
 .testimonial-card {
-    /* TODO: Card styles */
+    /* ✅ Testimonial Card: background tối, padding, rounded */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
 }
 
 .testimonial-text {
@@ -253,7 +323,10 @@ img {
 }
 
 .testimonial-author {
-    /* TODO: Flexbox */
+    /* ✅ Author: flex để avatar và name nằm ngang */
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .author-avatar {
@@ -308,7 +381,11 @@ img {
 }
 
 .footer-grid {
-    /* TODO: Grid responsive */
+    /* ✅ Footer Grid: 1 cột mobile, 2-4 cột desktop */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
 .footer-col h4 {
@@ -340,9 +417,54 @@ img {
    TODO: MEDIA QUERIES
    ========================================== */
 @media (min-width: 768px) {
-    /* TODO: Tablet styles */
+    /* ========== TABLET STYLES (768px+) ========== */
+
+    /* ✅ Navbar: hiện menu, ẩn hamburger */
+    .nav-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* ✅ Features: 2 cột */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ✅ About: 2 cột */
+    .about-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ✅ Testimonials: 2 cột */
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ✅ Footer: 2 cột */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1024px) {
-    /* TODO: Desktop styles */
+    /* ========== DESKTOP STYLES (1024px+) ========== */
+
+    /* ✅ Features: 3 cột */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ✅ Testimonials: 3 cột */
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* ✅ Footer: 4 cột */
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
